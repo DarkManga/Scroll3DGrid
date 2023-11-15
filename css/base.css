@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 *,
 *::after,
 *::before {
@@ -9,8 +11,8 @@
 	--color-text: #fff;
 	--color-bg: #000;
 	--color-link: #fff;
-	--color-link-hover: #907030;
-	--color-title: #907030;
+	--color-link-hover: #A108C7;
+	--color-title: #A108C7;
 	--perspective: 1500px;
 	--grid-item-ratio: 1.5;
 	--grid-width: 100%;
@@ -23,11 +25,27 @@
 body {
 	margin: 0;
 	color: var(--color-text);
-	background-color: var(--color-bg);
-	font-family: "moret-variable", serif;
+	background-image: url('/css/back.png');
+	font-family: 'Press Start 2P', cursive; /* Fonte estilo 8-bit */
 	font-variation-settings: "ital" 0, "wght" 300;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	cursor: url('/css/cursor.png'), auto;
+}
+
+/* Parallax Universe Background */
+.parallax {
+	/* The image used */
+	background-image: url('/css/back.png');
+
+	/* Set a specific height */
+	min-height: 1000px;
+
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 /* Page Loader */
@@ -133,7 +151,7 @@ main {
 	pointer-events: none;
 	align-items: center;
 	text-transform: uppercase;
-	font-size: 0.85rem;
+	font-size: 0.45rem;
 	background: var(--color-bg-alt);
 }
 
@@ -212,18 +230,18 @@ body #cdawrap {
     line-height: .9;
     display: grid;
     margin-top: 15vh;
-    font-weight: 400;
+    font-weight: 200;
 }
 
 .intro__title-pre {
-	font-weight: 300;
+	font-weight: 100;
     font-size: clamp(2rem,8vw,5rem);
     color: var(--color-title);
     text-transform: uppercase;
 }
 
 .intro__title-sub {
-    font-size: clamp(1.5rem,20vw,8rem);
+    font-size: clamp(1.5rem,10vw,6rem);
     max-width: 15ch;
     margin: 0 auto;
 }
@@ -236,6 +254,8 @@ body #cdawrap {
     line-height: 1.2;
     position: relative;
     align-self: end;
+	font-size: 30px;
+	font-size: clamp(1.5rem,5vw,1rem);
 }
 
 .intro__info::after {
@@ -382,4 +402,13 @@ body #cdawrap {
 	body #cdawrap {
 	    justify-self: end;
 	}
+}
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.blink {
+    animation: blink 1s step-start 0s infinite;
 }
